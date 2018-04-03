@@ -5,7 +5,7 @@
  * 
  * 
  * 1.双层嵌套，timeout。
- * 2.用StringBuffer，边遍历边删除。
+ * 2.用StringBuffer，边遍历边删除。学了KMP算法以后发现和KMP的思想很接近。
  */
 package LeetCode;
 

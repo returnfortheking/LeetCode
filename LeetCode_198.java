@@ -11,29 +11,34 @@ public class LeetCode_198 {
     public int rob(int[] nums) {
         //可用动态规划解决
         int len=nums.length;
-        if(len==0||nums==null)//排除数组长度为0的情况
+        if(len==0||nums==null)
         {
             return 0;
         }
-        if(len==1)//排除数组长度为1的情况
+        if(len==1)
         {
             return nums[0];
         }
-        if(len==2)//排除数组长度为2的情况
+        if(len==2)
         {
-            return nums[0]>nums[1]?nums[0]:nums[1];
+            return Math.max(nums[0],nums[1]);
         }
         nums[2]=nums[2]+nums[0];
         for(int i=3;i<len;i++)
         {
-            if(nums[i-2]>nums[i-3])
-            {
-                nums[i]=nums[i]+nums[i-2];
-            }else{
-                nums[i]=nums[i]+nums[i-3];
-            }  
+            nums[i]=nums[i]+Math.max(nums[i-2],nums[i-3]);
         }
-        return nums[len-1]>nums[len-2]?nums[len-1]:nums[len-2];
+        return Math.max(nums[len-1],nums[len-2]);
+    }
+    public int rob_simple(int[] num) {
+        int prevNo = 0;
+        int prevYes = 0;
+        for (int n : num) {
+            int temp = prevNo;
+            prevNo = Math.max(prevNo, prevYes);
+            prevYes = n + temp;
+        }
+        return Math.max(prevNo, prevYes);
     }
     public static void main(String[] args) {
 		LeetCode_198 l=new LeetCode_198();

@@ -1,0 +1,94 @@
+/*
+ * @author:ReturnOfTheKing
+ * 
+ * 12. Integer to Roman
+ */
+package LeetCode;
+
+public class LeetCode_12 {
+    public String intToRoman(int num) {
+        StringBuffer res=new StringBuffer();
+        while(num!=0)
+        {
+            if(num/1000>0)
+            {
+                res.append("M");
+                num=num-1000;
+                continue;
+            }
+            if(num/900>0)
+            {
+                res.append("CM");
+                num=num-900;
+                continue;                
+            }
+            if(num/500>0)
+            {
+                res.append("D");
+                num=num-500;
+                continue;
+            }
+            if(num/400>0)
+            {
+                res.append("CD");
+                num=num-400;
+                continue;                
+            }
+            if(num/100>0)
+            {
+                res.append("C");
+                num=num-100;
+                continue;
+            }
+            if(num/90>0)
+            {
+                res.append("XC");
+                num=num-90;
+                continue;                
+            }
+            if(num/50>0)
+            {
+                res.append("L");
+                num=num-50;
+                continue;
+            }
+            if(num/40>0)
+            {
+                res.append("XL");
+                num=num-40;
+                continue;                
+            }
+            if(num/10>0)
+            {
+                res.append("X");
+                num=num-10;
+                continue;                
+            }
+            if(num/9>0)
+            {
+                res.append("IX");
+                num=num-9;
+                continue;                
+            }
+            if(num/5>0)
+            {
+                res.append("V");
+                num=num-5;
+                continue;
+            }
+            if(num/4>0)
+            {
+                res.append("IV");
+                num=num-4;
+                continue;                
+            }
+            if(num/1>0)
+            {
+                res.append("I");
+                num=num-1;
+                continue;                
+            }     
+        }  
+        return res.toString();
+    }
+}

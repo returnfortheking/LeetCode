@@ -2,7 +2,8 @@
  * @author:ReturnOfTheKing
  * 
  * 
- * 1.注意排除重复情况。
+ * 1.冒泡排序类似,时间O(kn),空间O(1)
+ * 2.先翻转整个数组,然后分别翻转前k和后n-k.时间O(n),空间O(1)
  */
 package LeetCode;
 
